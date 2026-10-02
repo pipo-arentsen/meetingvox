@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Template for MeetingVox.app/Contents/Info.plist, copied by Scripts/build-app.sh.
+  CFBundleVersion is a placeholder: the script overwrites it with the git commit
+  count (PlistBuddy) so every build has a monotonically increasing number.
+-->
+<plist version="1.0">
+<dict>
+    <key>CFBundleIdentifier</key>
+    <string>com.pipostudio.meetingvox</string>
+    <key>CFBundleExecutable</key>
+    <string>MeetingVox</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleName</key>
+    <string>MeetingVox</string>
+    <key>CFBundleDisplayName</key>
+    <string>MeetingVox</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.0</string>
+    <key>CFBundleVersion</key>
+    <string>1</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>15.0</string>
+    <key>LSUIElement</key>
+    <true/>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.productivity</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>MeetingVox graba tu micrófono durante las reuniones para transcribirlas después. El audio nunca sale de este Mac.</string>
+    <key>NSAudioCaptureUsageDescription</key>
+    <string>MeetingVox graba el audio del sistema (la otra parte de tus reuniones) para transcribirlas después. El audio nunca sale de este Mac.</string>
+    <key>NSLocalNetworkUsageDescription</key>
+    <string>MeetingVox envía solo la transcripción de tus reuniones y sus metadatos (título, fecha, asistentes) a tu servidor Hindsight en la red local, junto con el cliente y el país de la reunión como etiquetas, y solo si activas el envío en Configuración. Nunca envía el audio ni el texto de las minutas. Si la reunión está vinculada a un evento de tu calendario (hasta que uses «Quitar evento del calendario»), el título del evento y los nombres de los invitados van como título y asistentes; los correos nunca salen de este Mac.</string>
+    <key>NSCalendarsFullAccessUsageDescription</key>
+    <string>MeetingVox solo lee tu calendario para encontrar el evento de cada reunión grabada: usa su título y los nombres de los invitados para nombrar la reunión y ayudar a redactar la minuta. Nunca modifica tus calendarios ni lee las notas de los eventos. Si usas minutas, resúmenes o la memoria de Hindsight, el título del evento y los nombres de los invitados se envían junto con la transcripción; los correos nunca salen de este Mac.</string>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
+    </dict>
+</dict>
+</plist>

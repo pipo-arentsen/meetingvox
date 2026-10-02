@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Embedded in the app at Contents/Library/LaunchAgents/ by Scripts/build-app.sh and
+  registered with SMAppService.agent(plistName:). The file name and Label must equal
+  AppIdentity.agentLabel (LaunchAgentPlistTests checks this file).
+
+  BundleProgram is relative to the bundle: no arguments are needed, because a bare
+  launch routes to `run` (LaunchArguments). KeepAlive restarts only after an
+  unsuccessful exit; a normal quit and the single-instance refusal exit 0, so they do
+  not respawn. No StandardErrorPath: launchd does not expand "~" and the app redirects
+  its own stderr to ~/Library/Logs/MeetingVox/meetingvox.log (LogRedirect).
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.pipostudio.meetingvox.agent</string>
+    <key>BundleProgram</key>
+    <string>Contents/MacOS/MeetingVox</string>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <dict>
+        <key>SuccessfulExit</key>
+        <false/>
+    </dict>
+    <key>ProcessType</key>
+    <string>Interactive</string>
+    <key>LimitLoadToSessionType</key>
+    <string>Aqua</string>
+    <key>AssociatedBundleIdentifiers</key>
+    <array>
+        <string>com.pipostudio.meetingvox</string>
+    </array>
+</dict>
+</plist>
